@@ -1,39 +1,53 @@
 import RootLayout from '@/component/RootLayout/RootLayout';
 import Banner from '@/component/RootLayout/UI/Bannar';
+import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
-const HomePage = () => {
+const HomePage = ({ catagory }) => {
+
   return (
     <div>
       <h1>Home Page</h1>
-      <Banner></Banner>
-      <div autoplay className="carousel w-full auto">
-        <div id="slide1" className="carousel-item relative w-full">
-          <img src="/images/stock/photo-1625726411847-8cbb60cc71e6.jpg" className="w-full" />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide4" className="btn btn-circle">❮</a>
-            <a href="#slide2" className="btn btn-circle">❯</a>
-          </div>
-        </div>
-        <div id="slide2" className="carousel-item relative w-full">
-          <img src="/images/stock/photo-1609621838510-5ad474b7d25d.jpg" className="w-full" />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide1" className="btn btn-circle">❮</a>
-            <a href="#slide3" className="btn btn-circle">❯</a>
-          </div>
-        </div>
-        <div id="slide3" className="carousel-item relative w-full">
-          <img src="/images/stock/photo-1414694762283-acccc27bca85.jpg" className="w-full" />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide2" className="btn btn-circle">❮</a>
-            <a href="#slide4" className="btn btn-circle">❯</a>
-          </div>
-        </div>
-        <div id="slide4" className="carousel-item relative w-full">
-          <img src="/images/stock/photo-1665553365602-b2fb8e5d1707.jpg" className="w-full" />
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide3" className="btn btn-circle">❮</a>
-            <a href="#slide1" className="btn btn-circle">❯</a>
+      <div>
+        {/* <Banner></Banner> */}
+      </div>
+
+      {/* catagory data */}
+      <div>
+        <h1 className='text-center text-4xl py-5 '>Aryan tech Product</h1>
+        <div className='grid justify-center items-center'>
+          <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2
+         gap-7 items-center justify-center'>
+            {
+              catagory?.map((partsCatagory) => <>
+                <Link href={`/product/${partsCatagory?.category}`}>
+                  <div style={{
+                    height: "370px"
+                  }} className="card   hover:scale-105 transition duration-500 cursor-pointer object-cover  w-[240px] bg-base-100 shadow-xl">
+
+                    <div style={{
+                      height: "180px"
+                    }}>
+                      <figure><img className='hover:scale-125 transition duration-500 cursor-pointer' src={partsCatagory?.image} alt="Shoes" /></figure>
+                    </div>
+
+                    <div className="card-body">
+                      <h2 className="text-xl ">
+                        {partsCatagory.productName?.length > 40 ? partsCatagory?.productName.slice(0, 22) + "..." : partsCatagory?.productName}
+
+                      </h2>
+                      <p >Catagroy: <span className='text-green-400'>{partsCatagory?.category}</span></p>
+                      <span>Price: {partsCatagory?.price}</span>
+                      <div className="card-actions justify-end">
+
+                      </div>
+                    </div>
+
+                  </div>
+                </Link>
+              </>)
+            }
           </div>
         </div>
       </div>
@@ -44,4 +58,15 @@ const HomePage = () => {
 export default HomePage;
 HomePage.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>
+}
+export const getStaticProps = async () => {
+  const res = await fetch("https://aryan-server.vercel.app/catagory")
+  const data = await res.json()
+
+
+  return {
+    props: {
+      catagory: data
+    }
+  }
 }

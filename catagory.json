@@ -1,0 +1,55 @@
+[
+  {
+    "category": "Processor",
+    "price": "33,090",
+    "image": "https://www.cloud.ryanscomputers.com/cdn/products/main/amd-ryzen-5-7600x-47ghz-53ghz-am5-socket-11665304091.webp",
+    "rating": 50,
+
+    "productName": "AMD Ryzen 5 7600X 4.7GHz-5.3GHz AM5 Socket Processor"
+  },
+  {
+    "category": "Motherboard",
+    "price": "62,280",
+    "image": "https://www.cloud.ryanscomputers.com/cdn/products/medium/asus-rog-crosshair-viii-formula-x570-ddr4-amd-am4-11595046780.webp",
+    "rating": 60,
+
+    "productName": "Asus ROG Crosshair VIII Formula X570 (Wi-Fi 6) DDR4 AMD AM4 Socket Gaming Motherboard"
+  },
+  {
+    "category": "RAM",
+    "price": "11,830",
+    "image": "https://www.cloud.ryanscomputers.com/cdn/products/medium/team-delta-rgb-16gb-ddr5-7000mhz-white-gaming-11689858980.webp",
+    "rating": 70,
+    "productName": "Team Delta RGB 16GB DDR5 7000MHz White Gaming Desktop RAM #FF4D532G7000HC34ADC01"
+  },
+  {
+    "category": "Power_Supply_Unit",
+    "price": "14,500",
+    "image": "https://www.cloud.ryanscomputers.com/cdn/products/medium/corsair-hx-series-hx850-850-watt-sfx-full-modular-11687351893.webp",
+    "rating": 50,
+    "productName": "Corsair HX Series HX850 850 Watt ATX Full Modular Power Supply Unit (PSU) #CP-9020213-UK"
+  },
+  {
+    "category": "Storage_Device",
+    "price": "67,799",
+    "image": "https://www.startech.com.bd/image/cache/catalog/storage/asustor/as6602t/as6602t-01-500x500.webp",
+    "rating": 40,
+
+    "productName": "Asustor AS6602T NAS Storage"
+  },
+  {
+    "category": "Monitor",
+    "price": "67,250",
+    "image": "https://www.cloud.ryanscomputers.com/cdn/products/main/lg-27qn880-27-inch-2k-qhd-2560x1440-ips-ergo-31601364575.webp",
+    "rating": 30,
+
+    "productName": "LG 27QN880 27 Inch 2K QHD (2560x1440) IPS Ergo Black Monitor (Dual HDMI, DP, USB, USB-C)"
+  },
+  {
+    "category": "Others",
+    "price": "235,000",
+    "image": "https://www.startech.com.bd/image/cache/catalog/monitor/lg-monitor/48gq900-b/48gq900-b-01-500x500.jpg",
+    "rating": 27,
+    "productName": "LG 48GQ900-B 48-inch UltraGear UHD OLED 120Hz Gaming Monitor"
+  }
+]
