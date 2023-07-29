@@ -48,22 +48,22 @@ export default SelectBuilder;
 SelectBuilder.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>
 }
-export const getStaticPaths = async () => {
-  const res = await fetch("https://aryan-server.vercel.app/catagory");
-  const data = await res.json();
-  const paths = data.map((category) => {
-    return {
-      params: {
-        builderId: category?.category
-      }
-    }
-  })
-  return {
-    paths,
-    fallback: false
-  }
-}
-export const getStaticProps = async (context) => {
+// export const getStaticPaths = async () => {
+//   const res = await fetch("https://aryan-server.vercel.app/catagory");
+//   const data = await res.json();
+//   const paths = data.map((category) => {
+//     return {
+//       params: {
+//         builderId: category?.category
+//       }
+//     }
+//   })
+//   return {
+//     paths,
+//     fallback: false
+//   }
+// }
+export const getServerSideProps = async (context) => {
   const category = context.params.builderId;
   const res = await fetch(`https://aryan-server.vercel.app/catagory/${category}`)
   const data = await res.json()
