@@ -1,13 +1,16 @@
 import RootLayout from '@/component/RootLayout/RootLayout';
-import SelecteBuilderComponet from '@/component/SelecteBuilderComponet';
+
 import Link from 'next/link';
-import React, { Children } from 'react';
+import dynamic from "next/dynamic";
 import { useSelector } from 'react-redux';
 
 const PcBuilder = ({ catagory }) => {
   const builderProduct = useSelector((state) => state?.builderSlice)
-  const { RAM } = builderProduct
-  console.log(RAM)
+
+  const SelecteBuilderComponet = dynamic(() => import("@/component/SelecteBuilderComponet"), {
+    loading: () => <h1>Loading...</h1>,
+    ssr: false,
+  });
   return (
     <div>
       <h1 className='text-center text-4xl py-5 '>PC Builder</h1>
@@ -45,36 +48,7 @@ const PcBuilder = ({ catagory }) => {
         </div>
 
       </div>
-      {/* <div className='grid justify-center items-center'>
-        <div className='grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2
-         gap-7 items-center justify-center'>
-          {
-            catagory?.map((partsCatagory) => <>
 
-              <div style={{
-                height: "370px"
-              }} className="card   hover:scale-105 transition duration-500 cursor-pointer object-cover  w-[240px] bg-base-100 shadow-xl">
-
-                <figure><img className='hover:scale-125 transition duration-500 cursor-pointer' src={partsCatagory?.image} alt="Shoes" /></figure>
-
-                <div className="card-body">
-                  <h2 className="text-xl ">
-                    {partsCatagory.productName}
-
-                  </h2>
-                  <p >Catagroy: <span className='text-green-400'>{partsCatagory?.category}</span></p>
-                  <span>Price: {partsCatagory?.price}</span>
-                  <div className="card-actions justify-end">
-
-                  </div>
-                </div>
-
-              </div>
-
-            </>)
-          }
-        </div>
-      </div> */}
     </div>
   );
 };
