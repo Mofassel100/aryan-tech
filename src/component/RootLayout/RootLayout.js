@@ -1,7 +1,8 @@
 import React from 'react';
 import Navber from '../Layout/Navber';
 
-const RootLayout = ({ children }) => {
+const RootLayout = ({ children }, { category }) => {
+  console.log(category)
   return (
     <div>
       <Navber></Navber>

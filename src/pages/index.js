@@ -1,6 +1,7 @@
+import Navber from '@/component/Layout/Navber';
 import RootLayout from '@/component/RootLayout/RootLayout';
 import Banner from '@/component/RootLayout/UI/Bannar';
-import Image from 'next/image';
+
 import Link from 'next/link';
 import React from 'react';
 
@@ -23,7 +24,7 @@ const HomePage = ({ catagory }) => {
               catagory?.map((partsCatagory) => <>
                 <Link href={`/product/${partsCatagory?.category}`}>
                   <div style={{
-                    height: "370px"
+                    height: "430px"
                   }} className="card   hover:scale-105 transition duration-500 cursor-pointer object-cover  w-[240px] bg-base-100 shadow-xl">
 
                     <div style={{
@@ -38,7 +39,9 @@ const HomePage = ({ catagory }) => {
 
                       </h2>
                       <p >Catagroy: <span className='text-green-400'>{partsCatagory?.category}</span></p>
-                      <span>Price: {partsCatagory?.price}</span>
+                      <p>Status: {partsCatagory?.status ? "In Stock" : "Out of stock"}</p>
+                      <p>Rating: {partsCatagory?.rating}</p>
+                      <p>Price: {partsCatagory?.price}</p>
                       <div className="card-actions justify-end">
 
                       </div>
@@ -57,13 +60,13 @@ const HomePage = ({ catagory }) => {
 
 export default HomePage;
 HomePage.getLayout = function getLayout(page) {
-  return <RootLayout>{page}</RootLayout>
+  return <RootLayout  >{page}
+  </RootLayout>
 }
+
 export const getStaticProps = async () => {
   const res = await fetch("https://aryan-server.vercel.app/catagory")
   const data = await res.json()
-
-
   return {
     props: {
       catagory: data

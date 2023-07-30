@@ -20,11 +20,24 @@ const ProductDetails = ({ singleProduct }) => {
             } .</h1>
             <h3 className='text-xl py-2 text-emerald-500'>{singleProduct?.category}</h3>
             <p>Rating :<span className='text-xl text-green-600'> ***</span>{singleProduct?.rating}</p>
-            {singleProduct.status ? "Sold In" : "Sould Out"}
+            <p>Status : {singleProduct.status ? "Sold In" : "Sould Out"}</p>
+            <p>Reviews : {singleProduct?.reviews
+            }
+            </p>
             <p>price : {singleProduct?.price}</p>
             <div className='text-center my-5'>
               <Link className='btn text-white bg-green-500' href="">Add To Card</Link>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className='mx-auto p-4 my-10'>
+        <div className='grid justify-center items-center'>
+          <div className=' border p-10 lg:max-w-[900px]'>
+            <h1 className='text-3xl py-3'>Description : </h1>
+            <p className='mb-4'>  {singleProduct?.Describtion}</p>
+            <h1 className='text-3xl py-3'>Key Feature:</h1>
+            <p className='mb-4'>  {singleProduct?.key_feature}</p>
           </div>
         </div>
       </div>

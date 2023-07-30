@@ -30,6 +30,8 @@ const SelectBuilder = ({ category }) => {
                     {product?.productName}
                   </h2>
                   <p >Catagroy: <span className='text-green-400'>{product?.category}</span></p>
+                  <p>Status: {product?.status ? "In Stock" : "Out of stock"}</p>
+                  <p>Rating: {product?.rating}</p>
                   <span>Price: {product?.price}</span>
                   <div className='text-center '>
                     <Link href={`/pc-builder`}> <button className='text-green-500 btn' onClick={() => handelAddToCard(product)}>Add To Card</button></Link>

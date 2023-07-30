@@ -1,7 +1,10 @@
 import Link from 'next/link';
 import React from 'react';
+import { useSession, signOut } from "next-auth/react"
 
 const Navber = () => {
+  const { data: session } = useSession()
+
   const myProduct = <React.Fragment>
     <li><Link className='hover:text-green-500' href={`/product/Motherboard`}>MotherBoard</Link></li>
     <li> <Link className='hover:text-green-500' href={`/product/Processor`}>Processor</Link></li>
@@ -36,7 +39,7 @@ const Navber = () => {
       <div className="navbar-center hidden  lg:flex">
         <ul className="menu  menu-horizontal px-1">
           <li><Link className='hover:text-green-500' href="/">Home</Link></li>
-          <li className='menu menu-dropdown-show' tabIndex={0}>
+          <li className='' tabIndex={0}>
             <details>
               <summary>Product</summary>
               <ul className="p-2">
@@ -49,6 +52,13 @@ const Navber = () => {
         </ul>
       </div>
       <div className="navbar-end">
+        {
+          session ? <> <button onClick={() => signOut()} className='text-white btn bg-red-500' href="/login">LogOut</button></> : <>
+            <Link className='text-white btn bg-green-500' href="/login">Login</Link>
+          </>
+        }
+
+
         <Link className='text-white btn bg-green-500' href="/pc-builder">Pc Builder</Link>
       </div>
     </div>

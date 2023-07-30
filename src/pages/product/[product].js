@@ -9,7 +9,7 @@ const Product = ({ category }) => {
             <>
               <Link href={`/productDetails/${product?._id}`}>
                 <div style={{
-                  height: "430px"
+                  height: "460px"
                 }} className="card   hover:scale-105 transition duration-500 cursor-pointer object-cover  w-[240px] bg-base-100 shadow-xl">
                   <div style={{
                     height: "180px",
@@ -23,6 +23,8 @@ const Product = ({ category }) => {
                       {product?.productName.length > 40 ? product?.productName.slice(0, 20) + "..." : product?.productName}
                     </h2>
                     <p >Catagroy: <span className='text-green-400'>{product?.category}</span></p>
+                    <p>Status: {product?.status ? "In Stock" : "Out of stock"}</p>
+                    <p>Rating: {product?.rating}</p>
                     <p>Price: {product?.price}</p>
 
                     <div className='text-center'>
