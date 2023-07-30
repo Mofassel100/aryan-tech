@@ -1,7 +1,7 @@
 
 import RootLayout from '@/component/RootLayout/RootLayout';
+import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 const HomePage = ({ catagory }) => {
   return (
     <div>
@@ -26,7 +26,8 @@ const HomePage = ({ catagory }) => {
                     <div style={{
                       height: "180px"
                     }}>
-                      <figure><img className='hover:scale-125 transition duration-500 cursor-pointer' src={partsCatagory?.image} alt="Shoes" /></figure>
+                      <figure><Image width={240} height={180} className='hover:scale-125 transition duration-500 cursor-pointer' src={partsCatagory?.image} alt="Shoes" /></figure>
+
                     </div>
 
                     <div className="card-body">

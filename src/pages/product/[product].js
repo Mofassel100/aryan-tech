@@ -1,4 +1,5 @@
 import RootLayout from '@/component/RootLayout/RootLayout';
+import Image from 'next/image';
 import Link from 'next/link';
 const Product = ({ category }) => {
   return (
@@ -15,7 +16,7 @@ const Product = ({ category }) => {
                     height: "180px",
                   }} className=''>
                     <figure >
-                      <img className='hover:scale-125  transition duration-500 cursor-pointer  h-full' src={product?.image} alt="Shoes" />
+                      <Image height={180} width={240} className='hover:scale-125  transition duration-500 cursor-pointer  h-full' src={product?.image} alt="Shoes" />
                     </figure>
                   </div>
                   <div className="card-body">

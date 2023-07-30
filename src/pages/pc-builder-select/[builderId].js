@@ -2,6 +2,7 @@ import RootLayout from '@/component/RootLayout/RootLayout';
 import Link from 'next/link';
 import { useDispatch } from 'react-redux';
 import { setComponent } from '../redux/feature/builderSlice';
+import Image from 'next/image';
 
 
 const SelectBuilder = ({ category }) => {
@@ -22,7 +23,7 @@ const SelectBuilder = ({ category }) => {
                 <figure >
                   <div style={{
                     height: "300px ",
-                  }} className='my-4'><img className='hover:scale-125 p-12 transition duration-500 cursor-pointer h-full' src={product?.image} alt="Shoes" />
+                  }} className='my-4'><Image height={300} width={238} className='hover:scale-125 p-12 transition duration-500 cursor-pointer h-full' src={product?.image} alt="Shoes" />
                   </div>
                 </figure>
                 <div className="card-body">
@@ -50,22 +51,22 @@ export default SelectBuilder;
 SelectBuilder.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>
 }
-// export const getStaticPaths = async () => {
-//   const res = await fetch("https://aryan-server.vercel.app/catagory");
-//   const data = await res.json();
-//   const paths = data.map((category) => {
-//     return {
-//       params: {
-//         builderId: category?.category
-//       }
-//     }
-//   })
-//   return {
-//     paths,
-//     fallback: false
-//   }
-// }
-export const getServerSideProps = async (context) => {
+export const getStaticPaths = async () => {
+  const res = await fetch("https://aryan-server.vercel.app/catagory");
+  const data = await res.json();
+  const paths = data.map((category) => {
+    return {
+      params: {
+        builderId: category?.category
+      }
+    }
+  })
+  return {
+    paths,
+    fallback: false
+  }
+}
+export const getStaticProps = async (context) => {
   const category = context.params.builderId;
   const res = await fetch(`https://aryan-server.vercel.app/catagory/${category}`)
   const data = await res.json()

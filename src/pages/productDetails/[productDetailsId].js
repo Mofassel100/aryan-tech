@@ -1,7 +1,8 @@
 import RootLayout from '@/component/RootLayout/RootLayout';
+import Image from 'next/image';
 import Link from 'next/link';
 const ProductDetails = ({ singleProduct }) => {
-  console.log(singleProduct)
+
   return (
     <div className='py-2 mx-auto'>
       <div className='grid justify-center items-center'>
@@ -9,9 +10,7 @@ const ProductDetails = ({ singleProduct }) => {
           <div style={{
             height: '450px'
           }} className='col-span-12 md:col-span-1 border-b-2 lg:col-span-3 grid justify-center items-center'>
-            <img style={{
-              height: '430px'
-            }} className='responsive transition duration-500 ease-in-out hover:scale-125' src={singleProduct?.image}></img>
+            <Image height={430} width={600} responsive className=' transition duration-500 ease-in-out hover:scale-125' src={singleProduct?.image} />
           </div>
           <div className='col-span-12 hover:border rounded hover:border-green-500 md:col-span-1 lg:col-span-3 px-8 py-14'>
             <h1 className='text-2xl py-1'>{singleProduct?.productName

@@ -3,9 +3,10 @@ import RootLayout from '@/component/RootLayout/RootLayout';
 import Link from 'next/link';
 import dynamic from "next/dynamic";
 import { useSelector } from 'react-redux';
+import Image from 'next/image';
 
 const PcBuilder = ({ catagory }) => {
-  const builderProduct = useSelector((state) => state?.builderSlice)
+  const builderProduct = useSelector((state) => state?.builder)
 
   const SelecteBuilderComponet = dynamic(() => import("@/component/SelecteBuilderComponet"), {
     loading: () => <h1>Loading...</h1>,
@@ -26,10 +27,7 @@ const PcBuilder = ({ catagory }) => {
                   <div style={{ height: "180px" }} className='border my-2 px-4 py-2 justify-between  rounded' >
                     <div style={{ height: "110px" }} className='border my-2 px-4 py-2 justify-between flex rounded'>
                       <div className='flex items-center justify-center gap-x-6'>
-                        <div style={{
-                          height: "90px",
-                          width: "80px"
-                        }}><img src={product?.image} alt="" /> </div>
+                        <div ><Image src={product?.image} height={90} width={80} alt="" /> </div>
                         <h1>{product?.category}</h1>
                       </div>
                       { }

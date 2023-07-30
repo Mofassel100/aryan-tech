@@ -2,7 +2,6 @@
 
 const SelecteBuilderComponet = ({ builderProduct, category }) => {
   const data = builderProduct[category]
-  console.log(data)
   return (
     <div className='flex justify-center items-center '>
       {

@@ -1,20 +1,12 @@
 import Link from 'next/link';
-import React from 'react';
+
 import { useSession, signOut } from "next-auth/react"
+
 
 const Navber = () => {
   const { data: session } = useSession()
 
-  const myProduct = <React.Fragment>
-    <li><Link className='hover:text-green-500' href={`/product/Motherboard`}>MotherBoard</Link></li>
-    <li> <Link className='hover:text-green-500' href={`/product/Processor`}>Processor</Link></li>
-    <li> <Link className='hover:text-green-500' href={`/product/RAM`}>RAM</Link></li>
-    <li> <Link className='hover:text-green-500' href={`/product/Power_Supply_Unit`}>Power Supply Unit</Link></li>
-    <li> <Link className='hover:text-green-500' href={`/product/Storage_Device`}>Storage Device</Link></li>
-    <li> <Link className='hover:text-green-500' href={`/product/Monitor`}>Monitor</Link></li>
-    <li> <Link className='hover:text-green-500' href={`/product/Others`}>Others</Link></li>
 
-  </React.Fragment>
   return (
 
     < div className="navbar bg-base-100 sticky top-0" >
@@ -28,7 +20,13 @@ const Navber = () => {
             <details>
               <summary>Product</summary>
               <ul className="p-2">
-                {myProduct}
+                <li><Link className='hover:text-green-500' href={`/product/Motherboard`}>MotherBoard</Link></li>
+                <li> <Link className='hover:text-green-500' href={`/product/Processor`}>Processor</Link></li>
+                <li> <Link className='hover:text-green-500' href={`/product/RAM`}>RAM</Link></li>
+                <li> <Link className='hover:text-green-500' href={`/product/Power_Supply_Unit`}>Power Supply Unit</Link></li>
+                <li> <Link className='hover:text-green-500' href={`/product/Storage_Device`}>Storage Device</Link></li>
+                <li> <Link className='hover:text-green-500' href={`/product/Monitor`}>Monitor</Link></li>
+                <li> <Link className='hover:text-green-500' href={`/product/Others`}>Others</Link></li>
               </ul>
             </details>
             <li ><a className='hover:text-green-500'>Item 3</a></li>
@@ -43,7 +41,13 @@ const Navber = () => {
             <details>
               <summary>Product</summary>
               <ul className="p-2">
-                {myProduct}
+                <li><Link className='hover:text-green-500' href={`/product/Motherboard`}>MotherBoard</Link></li>
+                <li> <Link className='hover:text-green-500' href={`/product/Processor`}>Processor</Link></li>
+                <li> <Link className='hover:text-green-500' href={`/product/RAM`}>RAM</Link></li>
+                <li> <Link className='hover:text-green-500' href={`/product/Power_Supply_Unit`}>Power Supply Unit</Link></li>
+                <li> <Link className='hover:text-green-500' href={`/product/Storage_Device`}>Storage Device</Link></li>
+                <li> <Link className='hover:text-green-500' href={`/product/Monitor`}>Monitor</Link></li>
+                <li> <Link className='hover:text-green-500' href={`/product/Others`}>Others</Link></li>
 
               </ul>
             </details>
