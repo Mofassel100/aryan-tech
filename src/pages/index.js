@@ -1,12 +1,8 @@
-import Navber from '@/component/Layout/Navber';
-import RootLayout from '@/component/RootLayout/RootLayout';
-import Banner from '@/component/RootLayout/UI/Bannar';
 
+import RootLayout from '@/component/RootLayout/RootLayout';
 import Link from 'next/link';
 import React from 'react';
-
 const HomePage = ({ catagory }) => {
-
   return (
     <div>
       <h1>Home Page</h1>
@@ -63,7 +59,6 @@ HomePage.getLayout = function getLayout(page) {
   return <RootLayout  >{page}
   </RootLayout>
 }
-
 export const getStaticProps = async () => {
   const res = await fetch("https://aryan-server.vercel.app/catagory")
   const data = await res.json()

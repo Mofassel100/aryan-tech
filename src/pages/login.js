@@ -1,6 +1,5 @@
 import { FcGoogle } from "react-icons/fc";
 import { BsGithub } from "react-icons/bs";
-import login from "../assets/image/banner/login.webp"
 import { signIn } from "next-auth/react";
 import RootLayout from "@/component/RootLayout/RootLayout";
 

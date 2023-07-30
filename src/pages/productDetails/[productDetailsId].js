@@ -1,5 +1,4 @@
 import RootLayout from '@/component/RootLayout/RootLayout';
-import Catagory from '@/component/RootLayout/UI/Catagory';
 import Link from 'next/link';
 import React from 'react';
 const ProductDetails = ({ singleProduct }) => {
