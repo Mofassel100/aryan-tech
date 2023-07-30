@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const SelecteBuilderComponet = ({ builderProduct, category }) => {
   const data = builderProduct[category]

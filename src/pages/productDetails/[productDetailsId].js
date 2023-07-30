@@ -1,6 +1,5 @@
 import RootLayout from '@/component/RootLayout/RootLayout';
 import Link from 'next/link';
-import React from 'react';
 const ProductDetails = ({ singleProduct }) => {
   console.log(singleProduct)
   return (

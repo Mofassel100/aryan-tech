@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Navber from '../Layout/Navber';
 
 const RootLayout = ({ children }, { category }) => {
