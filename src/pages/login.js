@@ -13,12 +13,14 @@ const Login = () => {
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <div className="card-body">
             <div className="form-control">
-              <button onClick={() => signIn("google")} className='btn w-full text-5xl'>< FcGoogle /></button>
+              <button onClick={() => signIn("google", {
+                callbackUrl: "https://aryan-tech-mofassel100.vercel.app/"
+              })} className='btn w-full text-5xl'>< FcGoogle /></button>
 
             </div>
             <div className="form-control">
               <button onClick={() => signIn("github", {
-                callbackUrl: "http://localhost:3000/"
+                callbackUrl: "https://aryan-tech-mofassel100.vercel.app/"
               })} className='w-full btn text-5xl'><BsGithub /></button>
 
             </div>

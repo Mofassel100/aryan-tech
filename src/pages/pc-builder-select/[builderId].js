@@ -1,14 +1,16 @@
 import RootLayout from '@/component/RootLayout/RootLayout';
 import Link from 'next/link';
-import { useDispatch } from 'react-redux';
-import { setComponent } from '../redux/feature/builderSlice';
+
 import Image from 'next/image';
+import { useDispatch } from 'react-redux';
+import { setComponent } from '@/component/redux/feature/buildSlice';
 
 
 const SelectBuilder = ({ category }) => {
   const dispatch = useDispatch()
   const handelAddToCard = (product) => {
-    dispatch(setComponent({ category: product?.category, component: product }))
+
+    dispatch(setComponent({ catagory: product.category, component: product }))
   }
   return (
     <div className='grid justify-center items-center '>
@@ -73,7 +75,8 @@ export const getStaticProps = async (context) => {
   return {
     props: {
       category: data
-    }
+    },
+    revalidate: 5,
   }
 
 }

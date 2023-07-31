@@ -1,17 +1,27 @@
-import RootLayout from '@/component/RootLayout/RootLayout';
-
 import Link from 'next/link';
-import dynamic from "next/dynamic";
-import { useSelector } from 'react-redux';
 import Image from 'next/image';
+// import { useSelector } from 'react-redux';
+
+import RootLayout from '@/component/RootLayout/RootLayout';
+import { useSelector } from 'react-redux';
+import SelecteBuilderComponet from '@/component/SelecteBuilderComponet';
+// import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
+// const RootLayout = dynamic(() => import("@/component/RootLayout/RootLayout"), {
+//   loading: () => <h1>Loading...</h1>,
+//   ssr: false,
+// });
 
 const PcBuilder = ({ catagory }) => {
-  const builderProduct = useSelector((state) => state?.builder)
+  // const SelecteBuilderComponet = dynamic(() => import("@/component/SelecteBuilderComponet"), {
+  //   loading: () => <h1>Loading...</h1>,
 
-  const SelecteBuilderComponet = dynamic(() => import("@/component/SelecteBuilderComponet"), {
-    loading: () => <h1>Loading...</h1>,
-    ssr: false,
-  });
+  // });
+  const builderProduct = useSelector((state) => state.component)
+  console.log(builderProduct)
+
+
+
   return (
     <div>
       <h1 className='text-center text-4xl py-5 '>PC Builder</h1>
@@ -61,6 +71,7 @@ export const getStaticProps = async () => {
   return {
     props: {
       catagory: data
-    }
+    },
+    revalidate: 5,
   }
 }

@@ -2,15 +2,21 @@
 import RootLayout from '@/component/RootLayout/RootLayout';
 import Image from 'next/image';
 import Link from 'next/link';
+import ima1 from '../assets/image/banner/leptop-5.webp'
+import im from "../assets/image/banner/leptop-1.jpg"
+import Bannar from '@/component/RootLayout/UI/Bannar';
 const HomePage = ({ catagory }) => {
   return (
     <div>
       <h1>Home Page</h1>
       <div>
-        {/* <Banner></Banner> */}
+
+        <Bannar />
+
       </div>
 
       {/* catagory data */}
+      <img src="https://images.unsplash.com/photo-1508919801845-fc2ae1bc2a28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1nfGVufDB8fDB8fHww&w=1000&q=80" alt="" />
       <div>
         <h1 className='text-center text-4xl py-5 '>Aryan tech Product</h1>
         <div className='grid justify-center items-center'>
@@ -66,6 +72,8 @@ export const getStaticProps = async () => {
   return {
     props: {
       catagory: data
-    }
+    },
+    revalidate: 5,
+
   }
 }
